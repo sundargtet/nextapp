@@ -1,14 +1,20 @@
 import { useEffect } from "react"
 import { useRouter } from "next/router"
+import { publicRoutes } from '@/utils/routes'
+import Navbar from "@/share/organisms/navbar"
 
 export default function LogInLayout({ children }: any) {
     const router = useRouter()
     useEffect(() => {
-        router.replace('/')
+        if (publicRoutes.includes(router.pathname)) {
+            router.push(router.pathname)
+        } else {
+            router.push('/login')
+        }
     }, [])
     return (
         <div>
-            <div>login navbar</div>
+            <Navbar type='login'/>
             {children}
         </div>
     )

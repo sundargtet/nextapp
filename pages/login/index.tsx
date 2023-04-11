@@ -19,8 +19,6 @@ export default function Login() {
         window.location.reload()
     }
     useEffect(()=>{
-        console.log('effect', details);
-        
         if(details.username && details.password){
             setIsSubmitDisabled(false)
         }else{
@@ -35,7 +33,7 @@ export default function Login() {
                 </FormLabel>
                 <Input type='text' value={details.username} name='username' onChange={handleChange} />
                 <FormLabel>
-                    user name
+                    password
                 </FormLabel>
                 <Input type='text' value={details.password} name='password' onChange={handleChange} />
                 <Button
