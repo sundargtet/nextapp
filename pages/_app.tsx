@@ -9,6 +9,7 @@ import Loading from '@/share/organisms/loading'
 import { useAuth } from '@/hooks'
 import '@/styles/globals.css'
 import { publicRoutes } from '@/utils/routes'
+import { theme } from '@/utils/theme'
 
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -23,7 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }
   return (
     <RecoilRoot>
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         {
           isAuth === undefined ? <Loading /> :
             isAuth === null ?

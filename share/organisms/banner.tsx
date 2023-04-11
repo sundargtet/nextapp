@@ -10,9 +10,10 @@ export default function Banner({ quote, handleDetails }: any) {
             display='flex'
             alignItems='center'
             justifyContent='center'
-            variant='filled'
+            // variant='filled'
             cursor={'pointer'}
             onClick={handleDetails}
+            variant='banner'
         >
             {quote}
         </Card>

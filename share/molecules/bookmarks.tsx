@@ -20,8 +20,8 @@ export default function Bookamarks() {
                             icon={<icons.bookmarked />}
                             cursor='pointer'
                             size='xs'
-                            bg={'#000000'}
                             onClick={handleBookmarkList}
+                            variant='bookmark'
                         >
                             <AvatarBadge boxSize='1.25em' bg='green.500'>
                                 {count}
@@ -31,7 +31,7 @@ export default function Bookamarks() {
                     <Avatar
                         icon={<icons.bookmark />}
                         size='xs'
-                        bg={'#000000'}
+                        variant='bookmark'
                     />
             }
         </>
