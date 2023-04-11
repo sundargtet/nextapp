@@ -1,7 +1,15 @@
-export default function LogInLayout() {
+import { useEffect } from "react"
+import { useRouter } from "next/router"
+
+export default function LogInLayout({ children }: any) {
+    const router = useRouter()
+    useEffect(() => {
+        router.replace('/')
+    }, [])
     return (
         <div>
-            hello
+            <div>login navbar</div>
+            {children}
         </div>
     )
 }

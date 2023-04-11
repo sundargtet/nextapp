@@ -16,7 +16,7 @@ export default function Bookamarks() {
                 count ?
                     <>
                         <Icon type='bookmarked' handleClick={handleBookmarkList} />
-                        <Badge colorScheme={'green'}>{count}</Badge>
+                        {/* <Badge colorScheme={'green'}>{count}</Badge> */}
                     </> :
                     <Icon type='bookmark' />
             }

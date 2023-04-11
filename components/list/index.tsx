@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { NextRouter, useRouter } from 'next/router'
 import { useRecoilState } from "recoil";
-import { HStack } from '@chakra-ui/react'
+import { HStack, Stack } from '@chakra-ui/react'
 import Card from '@/share/molecules/card'
 import { bookmarkQuotes } from '@/state/atoms'
 import { IQuote } from '@/typecheck/interfaces'
@@ -27,11 +27,11 @@ function App() {
     }
     return (
         <>
-            <HStack flexWrap={'wrap'} spacing={4}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }}>
                 {list.map((item: IQuote, index: number) =>
                     <Card key={index} data={item} handleBookmark={handleBookmark} handleOpen={handleOpen} />
                 )}
-            </HStack>
+            </div>
             {loading && <p>Loading...</p>}
             {error && <p>Error!</p>}
             <div ref={loader} />
