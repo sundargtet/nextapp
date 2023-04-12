@@ -1,9 +1,9 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, MutableRefObject } from 'react'
 import { useScroll } from './useScroll'
 import { useIntersectionObserver } from './useIntersectionObserver'
 
-export const useInfiniteScroll = (api: any, ref: any, count: any) => {
-    const [page, setPage] = useState(1)
+export const useInfiniteScroll = (api: string, ref: MutableRefObject<null>, count: number) => {
+    const [page, setPage] = useState<number>(1)
     const { loading, error, list } = useScroll(api, page)
     const handleObserver = useCallback((entries: any[]) => {
         const target = entries[0];

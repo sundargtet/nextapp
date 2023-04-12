@@ -1,8 +1,14 @@
-import { useEffect } from "react"
+import { MutableRefObject, useEffect } from "react"
 
-export const useIntersectionObserver = (fn: any, loaderRef: any) => {
+interface IOption {
+    root: null;
+    rootMargin: string;
+    threshold: number;
+}
+
+export const useIntersectionObserver = (fn: (entries: any[]) => void, loaderRef: MutableRefObject<null>) => {
     useEffect(() => {
-        const option = {
+        const option: IOption = {
             root: null,
             rootMargin: "20px",
             threshold: 0

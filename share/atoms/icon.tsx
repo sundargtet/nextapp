@@ -1,11 +1,12 @@
-import { BiNavigation } from 'react-icons/bi'
 import { IconButton } from '@chakra-ui/react'
 import { icons } from '@/utils/icons'
+import { TIcon } from '@/typecheck/types'
 
-export default function Icon({ type, handleClick, ...props }: any) {
+export default function Icon({ type, handleClick, ...rest }: TIcon) {
+    const { Istyle, ...props } = rest
     const getIcons = () => {
         const Logo = icons[type]
-        return <Logo/>
+        return <Logo style={Istyle} />
     }
     return (
         <>
@@ -15,7 +16,6 @@ export default function Icon({ type, handleClick, ...props }: any) {
                 aria-label='bookmark'
                 icon={getIcons()}
                 onClick={handleClick}
-                _hover={{ background: 'none' }}
                 {...props}
             />
         </>

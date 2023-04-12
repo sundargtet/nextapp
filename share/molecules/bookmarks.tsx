@@ -1,13 +1,12 @@
-import { useRouter } from 'next/router'
+import { NextRouter, useRouter } from 'next/router'
 import { useRecoilValue } from 'recoil'
 import { Avatar, AvatarBadge, Stack } from '@chakra-ui/react'
 import { bookmarkQuotesCount } from '@/state/selectors'
 import Icon from '@/share/atoms/icon'
-import { icons } from '@/utils/icons'
 
 export default function Bookamarks() {
-    const router = useRouter()
-    const count = useRecoilValue(bookmarkQuotesCount)
+    const router: NextRouter = useRouter()
+    const count: number = useRecoilValue(bookmarkQuotesCount)
     const handleBookmarkList = () => {
         router.push(`/bookmarks`)
     }
@@ -17,7 +16,7 @@ export default function Bookamarks() {
                 count ?
                     <>
                         <Avatar
-                            icon={<icons.bookmarked />}
+                            icon={<Icon type='bookmarked' />}
                             cursor='pointer'
                             size='xs'
                             onClick={handleBookmarkList}
@@ -29,7 +28,7 @@ export default function Bookamarks() {
                         </Avatar>
                     </> :
                     <Avatar
-                        icon={<icons.bookmark />}
+                        icon={<Icon type='bookmark'/>}
                         size='xs'
                         variant='bookmark'
                     />

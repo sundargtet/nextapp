@@ -1,1 +1,1 @@
-export const publicRoutes = ['/login', '/register', '/about']
+export const publicRoutes: string[] = ['/login', '/register', '/about']

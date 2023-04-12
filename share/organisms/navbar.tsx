@@ -1,14 +1,15 @@
-import { useRouter } from "next/router"
+import { NextRouter, useRouter } from "next/router"
 import Image from "next/image"
 import { Box, Button, Stack, useColorMode } from "@chakra-ui/react"
 import LogoIcon from '@/public/logo.svg'
 import Bookamarks from "../molecules/bookmarks"
 import Menu from '../molecules/menu'
 import Toggle from "../atoms/toggle"
+import { INavbar } from '@/typecheck/types'
 
-export default function Navbar({ type }: any) {
+export default function Navbar({ type }: INavbar) {
     const { colorMode } = useColorMode()
-    const router = useRouter()
+    const router: NextRouter = useRouter()
     const handleHome = () => {
         router.push('/')
     }

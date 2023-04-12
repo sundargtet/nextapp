@@ -1,15 +1,16 @@
 import { Card, CardBody, CardFooter, Text } from '@chakra-ui/react'
 import { useState } from 'react'
 import Icon from '../atoms/icon'
-
-export default function CardComponent({ data, handleBookmark, handleOpen }: any) {
-    const [isBookmarked, setIsBookmarked] = useState(false)
-    const onBookmark = (data: any) => {
+import { IQuote } from '@/typecheck/interfaces'
+import { TCard } from '@/typecheck/types'
+export default function CardComponent({ data, handleBookmark, handleOpen }: TCard) {
+    const [isBookmarked, setIsBookmarked] = useState<boolean>(false)
+    const onBookmark = (data: IQuote) => {
         setIsBookmarked(prev => !prev)
         handleBookmark(data)
     }
     return (
-        <Card w='md' h={200} style={{marginBottom:'8px'}}>
+        <Card w='md' h={200} style={{ marginBottom: '8px' }}>
             <CardBody>
                 <Text>
                     {data.content}

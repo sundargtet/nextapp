@@ -5,8 +5,9 @@ import { FaUserCircle } from 'react-icons/fa'
 import { IoLogOutOutline } from 'react-icons/io5'
 import { BiMessageSquareDetail } from 'react-icons/bi'
 import { AiOutlineProfile } from 'react-icons/ai'
+import { IconType } from 'react-icons'
 
-export const icons: any = {
+export const icons: { [propKey: string]: IconType } = {
     bookmark: FaRegBookmark,
     bookmarked: FaBookmark,
     open: BiNavigation,

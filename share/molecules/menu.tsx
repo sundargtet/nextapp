@@ -1,10 +1,9 @@
-import { useRouter } from 'next/router'
+import { NextRouter, useRouter } from 'next/router'
 import { IconButton, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react'
 import Icon from '../atoms/icon'
-import { icons } from '@/utils/icons'
 
 export default function MenuBar() {
-    const router = useRouter()
+    const router: NextRouter = useRouter()
     const handleLogout = () => {
         localStorage.removeItem('token')
         window.location.reload()
@@ -15,7 +14,7 @@ export default function MenuBar() {
                 <MenuButton
                     as={IconButton}
                     aria-label='menu'
-                    icon={<icons.user style={{ height: '25px', width: '25px' }} />}
+                    icon={<Icon type='user' Istyle={{ height: "25px", width: "25px" }} />}
                     variant='outlined'
                     borderRadius={'50px'}
                 />

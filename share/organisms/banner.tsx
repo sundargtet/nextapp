@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import { Card, Stack, HStack, Text, CardBody, Progress, Box } from "@chakra-ui/react";
+import { Card } from "@chakra-ui/react";
+import { TBanner } from '@/typecheck/types'
 
-export default function Banner({ quote, handleDetails }: any) {
+export default function Banner({ quote, handleDetails }: TBanner) {
 
     return (
         <Card
