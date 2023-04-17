@@ -2,6 +2,8 @@ import { Box, Stack } from '@chakra-ui/react'
 import { useMediaQuery } from '@chakra-ui/react'
 import LoginForm from '@/share/molecules/login-form'
 import FramerComp from '@/share/organisms/framer'
+import LoginTwo from '@/components/login-two'
+import LoginThree from '@/components/login-three'
 
 export default function Login() {
     const [variants] = useMediaQuery('(max-width: 760px)')
@@ -19,6 +21,7 @@ export default function Login() {
                     <LoginForm handleSubmit={handleSubmit} />
                 </Box>
             </Stack>
+            <LoginTwo/>
         </>
     )
 }

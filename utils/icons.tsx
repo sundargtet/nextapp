@@ -8,6 +8,10 @@ import { BiMessageSquareDetail } from 'react-icons/bi'
 import { AiOutlineProfile } from 'react-icons/ai'
 import { HiOutlineMenuAlt2 } from 'react-icons/hi'
 import { MdErrorOutline } from 'react-icons/md'
+import { BsCircle } from 'react-icons/bs'
+import { TbClover } from 'react-icons/tb'
+import { MdOutlineFavorite } from 'react-icons/md'
+import { MdKeyboardCommandKey } from 'react-icons/md'
 
 export const icons: { [propKey: string]: IconType } = {
     bookmark: FaRegBookmark,
@@ -18,5 +22,9 @@ export const icons: { [propKey: string]: IconType } = {
     about: BiMessageSquareDetail,
     profile: AiOutlineProfile,
     menu: HiOutlineMenuAlt2,
-    error: MdErrorOutline
+    error: MdErrorOutline,
+    circle: BsCircle,
+    clover: TbClover,
+    fav: MdOutlineFavorite,
+    command: MdKeyboardCommandKey
 }

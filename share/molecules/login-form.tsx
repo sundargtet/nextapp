@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Box, Button, Container, FormControl, FormLabel, Input, Stack } from '@chakra-ui/react'
+import SubmitButton from '../atoms/submit'
 
 export default function LoginForm({ handleSubmit }: any) {
     const [details, setDetails] = useState({
@@ -14,6 +15,13 @@ export default function LoginForm({ handleSubmit }: any) {
             [name]: value
         })
     }
+    useEffect(()=>{
+        if(details.username !== '' && details.password !== ''){
+            setIsSubmitDisabled(false)
+        }else{
+            setIsSubmitDisabled(true)
+        }
+    },[details])
     return (
         <FormControl >
             <FormLabel>
@@ -29,9 +37,11 @@ export default function LoginForm({ handleSubmit }: any) {
                 colorScheme='teal'
                 onClick={handleSubmit}
                 isDisabled={isSubmitDisabled}
+                w='100%'
             >
                 Submit
             </Button>
+            {/* <SubmitButton/> */}
         </FormControl>
     )
 }

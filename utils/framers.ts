@@ -89,6 +89,18 @@ const defaultStyles = {
     {
       style: {...defaultStyles},
     },
+    {
+      style: {...defaultStyles},
+    },
+    {
+      style: {...defaultStyles},
+    },
+    {
+      style: {...defaultStyles},
+    },
+    {
+      style: {...defaultStyles},
+    },
       
   ];
   
