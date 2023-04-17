@@ -33,8 +33,8 @@ export default function LoginForm({ handleSubmit }: any) {
             </FormLabel>
             <Input type='text' value={details.password} name='password' onChange={handleChange} />
             <Button
+                variant='login'
                 mt={4}
-                colorScheme='teal'
                 onClick={handleSubmit}
                 isDisabled={isSubmitDisabled}
                 w='100%'

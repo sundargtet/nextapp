@@ -34,7 +34,24 @@ export const Button = defineStyleConfig({
             color: mode('#000000', '#000000')(props),
             _hover: {
                 bg: 'secondary.400',
-            }
+            },
+        }),
+        login : (props:StyleFunctionProps)=>({
+            bg:mode('green.500', 'green.500')(props),
+            color: mode('#ffffff', '#ffffff')(props),
+            border:'1px solid #cecece',
+            _disabled : {
+                bg:'red.500',
+            },
+            _hover : {
+                bg:'telegram.500',
+                _disabled:{
+                    bg:"red.500"
+                }
+            },
+            _focus:{
+                bg:'purple.500'
+            },
         })
     }
 })
