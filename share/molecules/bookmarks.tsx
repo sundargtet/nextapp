@@ -1,8 +1,8 @@
 import { NextRouter, useRouter } from 'next/router'
 import { useRecoilValue } from 'recoil'
 import { Avatar, AvatarBadge, Stack } from '@chakra-ui/react'
-import { bookmarkQuotesCount } from '@/state/selectors'
-import Icon from '@/share/atoms/icon'
+import { bookmarkQuotesCount } from '../../state/selectors'
+import Icon from '../../share/atoms/icon'
 
 export default function Bookamarks() {
     const router: NextRouter = useRouter()

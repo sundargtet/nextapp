@@ -9,7 +9,7 @@ import { Box, Progress } from '@chakra-ui/react'
 export default function Banner() {
     const router: NextRouter = useRouter()
     const [quote, setQuote] = useState<IQuote | {}>({})
-    const { _id, content } = { ...quote }
+    const { _id, content, author } = { ...quote }
     const getRandomQuote = async () => {
         const res: AxiosResponse = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}random`)
         setQuote(res.data)
@@ -21,6 +21,6 @@ export default function Banner() {
     
     return (
         <Box mb={4}>
-            <BannerWall quote={content} handleDetails={handleDetails} />
+            <BannerWall quote={content} author={author} handleDetails={handleDetails} />
         </Box>)
 }

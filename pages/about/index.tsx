@@ -1,9 +1,9 @@
 import { Box, Button } from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/react";
+import { useState } from "react";
 
 export default function Abouts() {
-    const {colorMode, toggleColorMode} = useColorMode()
-    console.log('color mode', colorMode);
+    const { colorMode, toggleColorMode } = useColorMode()
     return (
         <>
             <Box as="h1" color={'primary.500'}>
@@ -13,6 +13,7 @@ export default function Abouts() {
             <Button variant='primary'>Click here</Button>
             <Button variant='secondary'>Click here</Button>
             <Button variant='shadow'>Click here</Button>
+
         </>
     )
 }

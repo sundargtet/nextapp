@@ -28,6 +28,13 @@ export const Button = defineStyleConfig({
         }),
         shadow: (props: StyleFunctionProps) => ({
             boxShadow: mode('0 0 2px 2px #efdfde', '0 0 2px 2px #626363')(props),
+        }),
+        links: (props: StyleFunctionProps) => ({
+            bg: mode('none', 'none')(props),
+            color: mode('#000000', '#000000')(props),
+            _hover: {
+                bg: 'secondary.400',
+            }
         })
     }
 })

@@ -7,7 +7,7 @@ import LogInLayout from '@/layouts/log-in'
 import Login from './login'
 import Loading from '@/share/organisms/loading'
 import { useAuth } from '@/hooks'
-import '@/styles/globals.css'
+// import '@/styles/globals.scss'
 import { publicRoutes } from '@/utils/routes'
 import { theme } from '@/utils/theme'
 

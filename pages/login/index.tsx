@@ -1,50 +1,24 @@
-import { Button, FormControl, FormLabel, Input } from '@chakra-ui/react'
-import { useEffect, useState } from 'react'
+import { Box, Stack } from '@chakra-ui/react'
+import { useMediaQuery } from '@chakra-ui/react'
+import LoginForm from '@/share/molecules/login-form'
+import FramerComp from '@/share/organisms/framer'
 
 export default function Login() {
-    const [details, setDetails] = useState({
-        username: '',
-        password: ''
-    })
-    const [isSubmitDisabled, setIsSubmitDisabled] = useState(true)
-    const handleChange = (e: any) => {
-        const { value, name } = e.target
-        setDetails({
-            ...details,
-            [name]: value
-        })
-    }
+    const [variants] = useMediaQuery('(max-width: 760px)')
     const handleSubmit = () => {
         localStorage.setItem('token', '1234')
         window.location.reload()
     }
-    useEffect(()=>{
-        if(details.username && details.password){
-            setIsSubmitDisabled(false)
-        }else{
-            setIsSubmitDisabled(true)
-        }
-    },[details])
     return (
         <>
-            <FormControl >
-                <FormLabel>
-                    user name
-                </FormLabel>
-                <Input type='text' value={details.username} name='username' onChange={handleChange} />
-                <FormLabel>
-                    password
-                </FormLabel>
-                <Input type='text' value={details.password} name='password' onChange={handleChange} />
-                <Button
-                    mt={4}
-                    colorScheme='teal'
-                    onClick={handleSubmit}
-                    isDisabled={isSubmitDisabled}
-                >
-                    Submit
-                </Button>
-            </FormControl>
+            <Stack direction={variants ? 'column' : 'row'} spacing={0} h='95vh'>
+                <Box w={variants ? '100%' : '50%'} h='100%'>
+                    <FramerComp />
+                </Box>
+                <Box w={variants ? '100%' : '50%'} h='100%' p={10}>
+                    <LoginForm handleSubmit={handleSubmit} />
+                </Box>
+            </Stack>
         </>
     )
 }

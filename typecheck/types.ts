@@ -1,5 +1,9 @@
+import { MutableRefObject } from "react";
 import { IQuote } from "./interfaces";
+import { icons } from "@/utils/icons";
+
 //------------------------atoms-----------
+
 export type TIcon = {
   type: string;
   handleClick?: () => void;
@@ -14,12 +18,14 @@ export type TCard = {
 
 //------------------------organisms---------
 export type TBanner = {
-  quote: string;
+  quote: string | undefined;
   handleDetails: () => void;
 };
 
 export type INavbar = {
   type: "login" | "loggedin";
+  btnRef?:MutableRefObject<null>;
+  onOpen?:()=>void;
 };
 //-------------------------utils--------------
 

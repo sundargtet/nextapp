@@ -1,12 +1,28 @@
 import { IconButton } from '@chakra-ui/react'
-import { icons } from '@/utils/icons'
-import { TIcon } from '@/typecheck/types'
+import { icons } from '../../utils/icons'
+import { TIcon } from '../../typecheck/types'
 
-export default function Icon({ type, handleClick, ...rest }: TIcon) {
+interface IC {
+    /**
+     * icon name 
+     */
+    type : string;
+    /**
+     * on click action
+     */
+    handleClick? : ()=>void;
+    /**
+     * rest props
+     */
+    [x: string]: any;
+}
+
+export default function Icon({ type='error', handleClick, ...rest }: IC) {
     const { Istyle, ...props } = rest
     const getIcons = () => {
         const Logo = icons[type]
-        return <Logo style={Istyle} />
+        if (Logo) return <Logo style={Istyle} />
+        return <icons.error style={{ color: "red", ...Istyle }} />
     }
     return (
         <>
