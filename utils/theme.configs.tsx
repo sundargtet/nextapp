@@ -31,10 +31,18 @@ export const Button = defineStyleConfig({
         }),
         links: (props: StyleFunctionProps) => ({
             bg: mode('none', 'none')(props),
-            color: mode('#000000', '#000000')(props),
+            color: mode('telegram.500', 'telegram.500')(props),
+            fontWeight:'normal',
+            fontSize:'16px',
+            letterSpacing:'2px',
+            textTransform: 'lowercase',
             _hover: {
-                bg: 'secondary.400',
+                bg: 'none',
+                textDecoration:'underline'
             },
+            _after : {
+                content: '">>"'
+            }
         }),
         login : (props:StyleFunctionProps)=>({
             bg:mode('green.500', 'green.500')(props),
