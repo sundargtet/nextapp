@@ -1,8 +1,8 @@
-import styles from '@/styles/Framer.module.css'
-import { framers } from '@/utils/framers'
-
 import { motion, Variants } from 'framer-motion'
 import { useState } from "react";
+import styles from '@/styles/Framer.module.css'
+import { framers } from '@/utils/framers'
+import { TFramer } from '@/typecheck/types'
 
 const variants: Variants = {
     open: { position: 'absolute', x: 100, y: 100, rotate: 360, backgroundColor: 'blue', width: '70px', height: '70px', borderRadius: '10px', opacity: 0.5 },
@@ -17,7 +17,7 @@ export default function Abouts() {
             </div>
             <div className={styles.wrapper}>
                 {
-                    framers.map((framer: any, index: any) => {
+                    framers.map((framer: TFramer, index: number) => {
                         const positionX = Math.floor((Math.random() * 1000) / 2)
                         const positionY = Math.floor((Math.random() * 1000) / 2)
                         const size = Math.floor(Math.random() * 100)

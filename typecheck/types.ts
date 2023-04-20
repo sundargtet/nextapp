@@ -1,6 +1,5 @@
 import { MutableRefObject } from "react";
-import { IQuote } from "./interfaces";
-import { icons } from "@/utils/icons";
+import { IQuote, IAuthorDetails } from "./interfaces";
 
 //------------------------atoms-----------
 
@@ -16,6 +15,15 @@ export type TCard = {
   handleOpen: (arg1: IQuote) => void;
 };
 
+export type TAuthorCard = {
+  author: IAuthorDetails;
+  handleAuthor: (arg1: string) => void;
+};
+
+export type TLoginForm = {
+  handleSubmit: () => void;
+};
+
 //------------------------organisms---------
 export type TBanner = {
   quote: string | undefined;
@@ -24,8 +32,18 @@ export type TBanner = {
 
 export type INavbar = {
   type: "login" | "loggedin";
-  btnRef?:MutableRefObject<null>;
-  onOpen?:()=>void;
+  btnRef?: MutableRefObject<null>;
+  onOpen?: () => void;
+};
+
+export type TFramer = {
+  style?: object;
+  initial?: object;
+  animate?: object;
+  exit?: object;
+  transition?: object;
+  whileHover?: object;
+  whileTap?: object;
 };
 //-------------------------utils--------------
 

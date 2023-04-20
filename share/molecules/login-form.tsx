@@ -1,27 +1,29 @@
 import { useEffect, useState } from 'react'
-import { Box, Button, Container, FormControl, FormLabel, Input, Stack } from '@chakra-ui/react'
+import { Button, FormControl, FormLabel, Input, Stack } from '@chakra-ui/react'
+import { TLoginForm } from '@/typecheck/types'
 import SubmitButton from '../atoms/submit'
 
-export default function LoginForm({ handleSubmit }: any) {
+
+export default function LoginForm({ handleSubmit }: TLoginForm) {
     const [details, setDetails] = useState({
         username: '',
         password: ''
     })
     const [isSubmitDisabled, setIsSubmitDisabled] = useState(true)
-    const handleChange = (e: any) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { value, name } = e.target
         setDetails({
             ...details,
             [name]: value
         })
     }
-    useEffect(()=>{
-        if(details.username !== '' && details.password !== ''){
+    useEffect(() => {
+        if (details.username !== '' && details.password !== '') {
             setIsSubmitDisabled(false)
-        }else{
+        } else {
             setIsSubmitDisabled(true)
         }
-    },[details])
+    }, [details])
     return (
         <FormControl >
             <FormLabel>

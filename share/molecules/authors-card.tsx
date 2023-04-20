@@ -1,7 +1,8 @@
 import { Box, Button } from "@chakra-ui/react";
 import Link from "next/link";
+import { TAuthorCard } from '@/typecheck/types'
 
-export default function AuthorsCard({ author, handleAuthor }: any) {
+export default function AuthorsCard({ author, handleAuthor }: TAuthorCard) {
     return (
         <Box
             border='1px solid #cecece'

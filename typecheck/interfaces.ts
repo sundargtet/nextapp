@@ -20,3 +20,31 @@ export interface IQuoteId {
 export interface IParams {
   params: IQuoteId;
 }
+
+export interface IAuthors {
+  authors: IAuthorDetails[];
+}
+
+export interface IAuthorDetails {
+  bio: string;
+  dateAdded: string;
+  dateModified: string;
+  description: string;
+  link: string;
+  name: string;
+  quoteCount: number;
+  slug: string;
+  _id: string;
+}
+
+export interface IAuthorQuery {
+  query: {
+    slug: string | undefined;
+  };
+}
+
+export interface IRoutePages {
+  path: string;
+  name: string;
+}
+

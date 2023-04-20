@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import Navbar from "@/share/organisms/navbar"
 import { IChildren } from '@/typecheck/types'
 import { routePages } from '@/utils/routes'
-import Link from 'next/link'
+import { IRoutePages } from '@/typecheck/interfaces'
 
 export default function LoggedInLayout({ children }: IChildren) {
     const router = useRouter()
@@ -30,7 +30,7 @@ export default function LoggedInLayout({ children }: IChildren) {
 
                     <DrawerBody>
                         {
-                            routePages.map((item: any, index:any) =>
+                            routePages.map((item: IRoutePages, index: number) =>
                                 <Button
                                     key={index}
                                     variant='link'
