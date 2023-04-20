@@ -24,17 +24,15 @@ const detailsVariants: Variants = {
 const cardVariants: Variants = {
   offscreen: {
     opacity: 0,
-    rotate: -50,
+    rotate: -10,
     scale: 1,
-    x: 100,
     y: 300
   },
   onscreen: {
     opacity: 1,
     rotate: 0,
-    scale: 1.5,
-    x: 100,
-    y: 70,
+    scale: 1,
+    y: 0,
     transition: {
       type: "spring",
       bounce: 0.4,
@@ -45,11 +43,11 @@ const cardVariants: Variants = {
 
 function Component() {
   return (
-    <Stack direction={'row'} position='relative' p={4}>
-      <Box w={'60%'}>
+    <Stack direction='row' backgroundColor='whatsapp.500' h='70vh' p={4}>
+      <Stack w={'60%'} justifyContent='center' alignItems='center'>
         <Details />
-      </Box>
-      <Box display='flex' alignItems='center' justifyContent='center'>
+      </Stack>
+      <Box display='flex' alignItems='center' justifyContent='center' width='40%'>
         <Card />
       </Box>
     </Stack>
@@ -61,10 +59,10 @@ export default Component
 function Card() {
   return (
     <motion.div
+      className={styles.card}
       variants={cardVariants}
       initial='offscreen'
       whileInView='onscreen'
-      className={styles.card}
     >
       <Image src={QuoteImage} alt='quote' className={styles.image} />
     </motion.div>
