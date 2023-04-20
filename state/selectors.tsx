@@ -1,5 +1,6 @@
+import axios from "axios";
 import { selector } from "recoil";
-import { bookmarkQuotes } from './atoms'
+import { bookmarkQuotes, fetchQuoute } from './atoms'
 
 export const bookmarkQuotesCount = selector({
     key: 'bookmarkQuotesCount',

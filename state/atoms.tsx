@@ -15,3 +15,8 @@ export const bookmarkQuotes = atom<IQuote[]>({
     key: 'bookamark',
     default: []
 })
+
+export const fetchQuoute: RecoilState<{}> = atom({
+    key: 'fetchQuote',
+    default: {}
+})

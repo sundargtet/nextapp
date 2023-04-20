@@ -30,8 +30,9 @@ export default function LoggedInLayout({ children }: IChildren) {
 
                     <DrawerBody>
                         {
-                            routePages.map((item: any) =>
+                            routePages.map((item: any, index:any) =>
                                 <Button
+                                    key={index}
                                     variant='link'
                                     w={'100%'}
                                     textAlign='right'

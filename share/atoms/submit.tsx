@@ -15,8 +15,6 @@ export default function Submit() {
             "linear-gradient(180deg, rgb(230, 255, 0) 0%, rgb(3, 209, 0) 100%)"
         ]
     )
-    console.log('m.back', background);
-    console.log('m.x', x);
     const handleDrag=(e:any)=>{
         console.log('m.dragging...',e.target.offsetLeft);
         
