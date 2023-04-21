@@ -22,16 +22,18 @@ export default function Icon({ type='error', handleClick, ...rest }: IC) {
     const getIcons = () => {
         const Logo = icons[type]
         if (Logo) return <Logo style={Istyle} />
-        return <icons.error style={{ color: "red", ...Istyle }} />
+        return <icons.error style={{ color: "red", ...Istyle }} data-testid='nxt-icon-element'/>
     }
     return (
         <>
             <IconButton
                 variant='ghost'
                 colorScheme='gray'
-                aria-label='bookmark'
+                aria-label='icon-button'
+                data-testid='icon-button'
                 icon={getIcons()}
                 onClick={handleClick}
+                className='nxt-icon'
                 {...props}
             />
         </>
