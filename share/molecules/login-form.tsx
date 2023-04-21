@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import { FormControl, FormLabel, Input } from '@chakra-ui/react'
 import { TLoginForm } from '@/typecheck/types'
-import SubmitButton from '../atoms/submit'
 import Button from '../atoms/button'
+
+import SubmitButton from '../atoms/submit'
 
 
 export default function LoginForm({ handleSubmit }: TLoginForm) {
@@ -25,6 +26,15 @@ export default function LoginForm({ handleSubmit }: TLoginForm) {
             setIsSubmitDisabled(true)
         }
     }, [details])
+    const handleReset=()=>{
+        const {username, password} = details
+        if(username !== '' || password !== ''){
+            setDetails({
+                username:"",
+                password:''
+            })
+        }
+    }
     return (
         <FormControl >
             <FormLabel>
@@ -44,7 +54,7 @@ export default function LoginForm({ handleSubmit }: TLoginForm) {
             >
                 Submit
             </Button>
-            {/* <SubmitButton/> */}
+            {/* <SubmitButton handleSubmit={handleSubmit} hadnleReset={handleReset}/> */}
         </FormControl>
     )
 }

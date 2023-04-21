@@ -22,6 +22,7 @@ export type TAuthorCard = {
 
 export type TLoginForm = {
   handleSubmit: () => void;
+  handleReset?:()=>void;
 };
 
 //------------------------organisms---------

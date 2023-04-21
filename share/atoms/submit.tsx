@@ -1,11 +1,15 @@
-import { DragEvent } from 'react'
+import { DragEvent, useState } from 'react'
 import { motion, PanInfo, useMotionValue, useTransform } from 'framer-motion'
 import styles from '@/styles/Submit.module.css'
 import Icon from './icon'
 import { MutableRefObject, useEffect, useRef } from 'react'
 
-export default function Submit() {
-    const divRef: MutableRefObject<null> = useRef(null)
+export default function Submit({ handleSubmit, hadnleReset }: any) {
+    const [positions, setPositions] = useState({
+        posStart: 0,
+        posEnd: 0
+    })
+    const divRef: any = useRef(null)
     const x = useMotionValue(0)
     const background = useTransform(
         x,
@@ -17,17 +21,38 @@ export default function Submit() {
         ]
     )
     const handleDrag = (e: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
-        console.log('m.dragging...', e.target);
+        const { point } = info
+        const { x } = point
+        if (Math.round(x - 50) <= Math.round(positions.posStart)) {
+            hadnleReset()
 
+        } else if (Math.round(x) >= Math.round(positions.posEnd - 50)) {
+            handleSubmit()
+        }
     }
-    const handleLoad = () => {
-        console.log('m.load');
-    }
+    useEffect(() => {
+        const { left, right } = divRef.current.getBoundingClientRect()
+        setPositions({
+            posStart: left,
+            posEnd: right
+        })
+
+
+    }, [])
     return (
-        <motion.div style={{ background }} className={styles.container} ref={divRef} >
-            <motion.div style={{ x }} drag='x' dragConstraints={{ left: 0, right: 0 }} onDrag={handleDrag}>
-                <Icon type='circle' />
+        <motion.div style={{ background }} className={styles.container} ref={divRef}>
+            <div className={styles.reset}>RESET</div>
+            <motion.div
+                style={{ x }}
+                drag='x'
+                dragConstraints={{ left: 1, right: 1 }}
+                onDrag={handleDrag}
+                className={styles.item}
+            >
+
+                <Icon type='arrows' Istyle={{ cursor: 'move' }} />
             </motion.div>
+            <div className={styles.submit}>SUBMIT</div>
         </motion.div>
     )
 }

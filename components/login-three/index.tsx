@@ -18,7 +18,7 @@ const variants: Variants = {
 const MyComponent = () => {
     const { scrollYProgress } = useViewportScroll()
     const scale = useTransform(scrollYProgress, [0, 1], [0.5, 3])
-    console.log('progress', scrollYProgress);
+    // console.log('progress', scrollYProgress);
 
     return (
         <LazyMotion features={domAnimation}>

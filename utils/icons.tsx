@@ -12,6 +12,7 @@ import { BsCircle } from 'react-icons/bs'
 import { TbClover } from 'react-icons/tb'
 import { MdOutlineFavorite } from 'react-icons/md'
 import { MdKeyboardCommandKey } from 'react-icons/md'
+import { CgArrowsH } from 'react-icons/cg'
 
 export const icons: { [propKey: string]: IconType } = {
     bookmark: FaRegBookmark,
@@ -26,5 +27,6 @@ export const icons: { [propKey: string]: IconType } = {
     circle: BsCircle,
     clover: TbClover,
     fav: MdOutlineFavorite,
-    command: MdKeyboardCommandKey
+    command: MdKeyboardCommandKey,
+    arrows: CgArrowsH
 }
