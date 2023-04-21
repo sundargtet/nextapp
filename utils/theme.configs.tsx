@@ -32,33 +32,33 @@ export const Button = defineStyleConfig({
         links: (props: StyleFunctionProps) => ({
             bg: mode('none', 'none')(props),
             color: mode('telegram.500', 'telegram.500')(props),
-            fontWeight:'normal',
-            fontSize:'16px',
-            letterSpacing:'2px',
+            fontWeight: 'normal',
+            fontSize: '16px',
+            letterSpacing: '2px',
             textTransform: 'lowercase',
             _hover: {
                 bg: 'none',
-                textDecoration:'underline'
+                textDecoration: 'underline'
             },
-            _after : {
+            _after: {
                 content: '">>"'
             }
         }),
-        login : (props:StyleFunctionProps)=>({
-            bg:mode('green.500', 'green.500')(props),
+        login: (props: StyleFunctionProps) => ({
+            bg: mode('green.500', 'green.500')(props),
             color: mode('#ffffff', '#ffffff')(props),
-            border:'1px solid #cecece',
-            _disabled : {
-                bg:'red.500',
+            border: '1px solid #cecece',
+            _disabled: {
+                bg: 'red.500',
             },
-            _hover : {
-                bg:'telegram.500',
-                _disabled:{
-                    bg:"red.500"
+            _hover: {
+                bg: 'telegram.500',
+                _disabled: {
+                    bg: "red.500"
                 }
             },
-            _focus:{
-                bg:'purple.500'
+            _focus: {
+                bg: 'purple.500'
             },
         })
     }
@@ -74,12 +74,94 @@ export const Card = cardMultiStyleConfig({
             container: {
                 bg: "light.500",
                 color: 'dark.500',
+                height: '150px',
+                width: "100%",
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
                 _dark: {
                     bg: 'dark.300',
                     color: 'light.400'
+                },
+                main: {
+                    fontWeight: 'bold',
+                    color: '#3d3d3d'
+                },
+                footer: {
+                    fontStyle: 'italic',
+                    _before: {
+                        content: '"-"'
+                    }
                 }
+            },
+        }),
+        bookmark: cardPartsStyle({
+            container: {
+                bg: 'telegram.100',
+                p: 4,
+                m: 1,
+                w: '32%',
+                display: 'inline-block',
+            },
+            body: {
+                fontWeight: 'bold',
+                p: 0,
+                fontSize: '20px'
+            },
+            header: {
+                p: 0,
+                display: 'block',
+                textAlign: 'right'
+            },
+            footer: {
+                display: 'block',
+                p: 0,
+                textAlign: 'right',
+                fontStyle: 'italic',
+                color: '#636363'
             }
-        })
+        }),
+        author: cardPartsStyle({
+            container: {
+                border: '1px solid #dadada',
+                boxShadow: '2px 2px 4px 1px #cecece',
+                p: 4,
+                borderRadius: 4
+            },
+            header: {
+                p: 0,
+                fontWeight: 'bold',
+                borderBottom: '1px solid #cecece'
+            },
+            body: {
+                p: 0
+            },
+            footer: {
+                p: 0,
+                textAlign: "right",
+                display: 'block'
+            }
+        }),
+        quote: {
+            container: {
+                p: 4,
+                w: 'md',
+                h: 180,
+                mb: '8px',
+                boxShadow: '1px 1px 1px 1px #cecece'
+            },
+            body: {
+                p: 0
+            },
+            footer: {
+                p: 0,
+                display: 'flex',
+                justifyContent: 'flex-end',
+                borderTop:'1px solid #cecece'
+
+            }
+        }
     }
 })
 

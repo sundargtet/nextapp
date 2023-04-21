@@ -1,8 +1,7 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useRef } from "react";
 import { NextRouter, useRouter } from 'next/router'
 import { useRecoilState } from "recoil";
-import { HStack, Stack } from '@chakra-ui/react'
-import Card from '@/share/molecules/card'
+import Card from '@/share/molecules/quote-card'
 import { bookmarkQuotes } from '@/state/atoms'
 import { IQuote } from '@/typecheck/interfaces'
 import { useInfiniteScroll } from '@/hooks/useInfiniteScroll'

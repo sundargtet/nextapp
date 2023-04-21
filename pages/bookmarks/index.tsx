@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { useRecoilValue } from 'recoil'
 import { useRouter } from 'next/router'
-import { Card } from '@chakra-ui/react'
 import { bookmarkQuotes } from '@/state/atoms'
+import BookmarkCard from '@/share/molecules/bookmark-card'
 
 export default function BookmarkList() {
     const router = useRouter()
@@ -15,7 +15,10 @@ export default function BookmarkList() {
     return (
         <div>
             {
-                quotes.map((item, index) => <Card key={index} boxShadow={'2px 2px 4px #cecece'} mb={4} p={4}>{item.content}</Card>)
+                quotes.map((item) =>
+                    <BookmarkCard key={item._id} content={item.content} author={item.author}/>
+                )
+
             }
         </div>
     )

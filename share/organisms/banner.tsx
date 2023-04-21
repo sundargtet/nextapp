@@ -1,4 +1,4 @@
-import { Box, Card, Stack } from "@chakra-ui/react";
+import { Box, Card, CardBody, CardFooter, Stack } from "@chakra-ui/react";
 // import { TBanner } from '@/typecheck/types'
 import { TBanner } from '../../typecheck/types'
 
@@ -15,24 +15,17 @@ interface IBanner {
 }
 
 export default function Banner({ quote, author, handleDetails }: IBanner) {
-
     return (
         <Card
-            height='150px'
-            width='100%'
-            display='flex'
-            alignItems='center'
-            justifyContent='center'
-            cursor={'pointer'}
             onClick={handleDetails}
             variant='banner'
         >
-            <div>
+            <main>
                 {quote}
-            </div>
-            <div>
-                -{author}
-            </div>
+            </main>
+            <footer>
+                {author}
+            </footer>
         </Card>
     )
 }

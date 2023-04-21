@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
-import { Button, FormControl, FormLabel, Input, Stack } from '@chakra-ui/react'
+import { FormControl, FormLabel, Input } from '@chakra-ui/react'
 import { TLoginForm } from '@/typecheck/types'
 import SubmitButton from '../atoms/submit'
+import Button from '../atoms/button'
 
 
 export default function LoginForm({ handleSubmit }: TLoginForm) {

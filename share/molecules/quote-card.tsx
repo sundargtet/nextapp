@@ -1,4 +1,4 @@
-import { Card, CardBody, CardFooter, Text } from '@chakra-ui/react'
+import { Card, CardBody, CardFooter } from '@chakra-ui/react'
 import { useState } from 'react'
 import Icon from '../atoms/icon'
 import { IQuote } from '@/typecheck/interfaces'
@@ -10,13 +10,11 @@ export default function CardComponent({ data, handleBookmark, handleOpen }: TCar
         handleBookmark(data)
     }
     return (
-        <Card w='md' h={200} style={{ marginBottom: '8px' }}>
+        <Card variant='quote'>
             <CardBody>
-                <Text>
-                    {data.content}
-                </Text>
+                {data.content}
             </CardBody>
-            <CardFooter textAlign={'right'} display='flex' justifyContent='flex-end' padding={0}>
+            <CardFooter>
                 {
                     isBookmarked ?
                         <Icon type='bookmarked' handleClick={() => onBookmark(data)} /> :
